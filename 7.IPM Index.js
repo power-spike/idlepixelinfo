@@ -28,6 +28,7 @@ addLeftButton({label:"Projects",clickFunction:clickProjects})
 addLeftButton({label:"Station",clickFunction:clickStation})
 addLeftButton({label:"Rooms",clickFunction:clickRooms})
 addLeftButton({label:"Process",clickFunction:clickProcess})
+addLeftButton({label:"Stars",clickFunction:clickStars})
 
 window.onload = firstContact()
 
@@ -47,21 +48,3 @@ function myRound(val,multi){
 
     return calc + " > " + (calc2+res)
 }
-
-/*
-console.log(myRound(5,.9))
-console.log(myRound(3,.9))
-*/
-
-/*
-for (i=0;i<planetsArray.length;i++){
-    let vvv = 0
-    for (j=0;j<planetsArray[i].ores.length;j++){
-        vvv+= planetsArray[i].ores[j].yield
-    }
-
-    if (vvv !== 100) {console.log(planetsArray[i].label + " : " + vvv)}
-    
-
-}
-*/

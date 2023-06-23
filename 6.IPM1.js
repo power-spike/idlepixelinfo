@@ -172,6 +172,12 @@ function clickProcess(){
     buildProcess()
 }
 
+function clickStars() {
+    popKiller()
+    cleanParent(right)
+    buildStars()
+}
+
 function centerScreen(element){
     element.style.position = "absolute"
     let rect = element.getBoundingClientRect()

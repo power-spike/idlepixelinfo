@@ -69,7 +69,7 @@ const oresArray = []
 const barsArray = []
 const itemsArray = []
 
-
+//region Ores Array
 oresArray.push(
 
 new Item({
@@ -985,6 +985,7 @@ new Item({
 }),
 
 )
+//endregion
 
 /*
 new Item({
@@ -1029,10 +1030,10 @@ function buildItems(){
     itemsContainer.style.textAlign = "center"
     right.appendChild(itemsContainer)
 
-        let oresColumn = document.createElement("div")
-        oresColumn.style = containerColumn
-        oresColumn.setAttribute("id","oresColumn")
-        itemsContainer.appendChild(oresColumn)
+    let oresColumn = document.createElement("div")
+    oresColumn.style = containerColumn
+    oresColumn.setAttribute("id", "oresColumn")
+    itemsContainer.appendChild(oresColumn)
 
         let barsColumn = document.createElement("div")
         barsColumn.style = containerColumn
@@ -1077,8 +1078,16 @@ function buildItems(){
 }
 
 
-function buildColumns(arraySource,targetTable,itemDisplayTop,itemDisplayMiddle,imgSize){
+function buildColumns(arraySource, targetTable, itemDisplayTop, itemDisplayMiddle, imgSize, cellCount){
 
+    if (cellCount < 1)
+    {
+        cellCount = 2
+    }
+    if (imgSize < 1)
+    {
+        imgSize = 32
+    }
     let tr = document.createElement("tr")
     targetTable.appendChild(tr)
     let td = undefined
@@ -1092,9 +1101,13 @@ function buildColumns(arraySource,targetTable,itemDisplayTop,itemDisplayMiddle,i
         img.src = item.img
         img.style.display = "block"
         img.style.border = "white 2px solid"
+        img.style.width = imgSize + "px"
+        img.style.height = imgSize + "px"
+        img.width = imgSize
+        img.height = imgSize
         td.appendChild(img)
 
-        if(itemCount ===2){
+        if(itemCount === cellCount) {
             itemCount = 0
             tr = document.createElement("tr")
             targetTable.appendChild(tr)
